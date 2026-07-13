@@ -1,12 +1,19 @@
 const {stripeSecretKey,razorpay_key_id,razorpay_key_secret}= require('../../../configs/config')
 const {orderModel,transactionModel,deliveryModel,userModel,CartModel,CompletedCartModel} = require('../../models')
-var stripe = require("stripe")(stripeSecretKey);
+const stripe = stripeSecretKey ? require("stripe")(stripeSecretKey) : null;
 
 
 const Razorpay = require('razorpay')
 
 module.exports = {
     stripeCharge : async (req,res) => {
+        if (!stripe) {
+            return res.status(503).json({
+                type: "ERROR",
+                status: "FAILED",
+                message: "Stripe is not configured"
+            });
+        }
         const orderDetails = await orderModel.findById(req.body.metadata._orderID).exec();
 
         stripe.charges.create({
