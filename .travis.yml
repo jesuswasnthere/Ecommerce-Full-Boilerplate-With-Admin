@@ -1,7 +1,7 @@
 sudo: false
 language: node_js
 node_js:
-- '8'
+- '18'
 services: mongodb
 branches:
   only:
@@ -10,8 +10,8 @@ cache:
   directories:
   - node_modules
 before_install:
-- npm update
+- corepack enable
 install:
-- npm install
-- npm run test:ci
-- npm run coveralls
+- pnpm install
+- pnpm run test:ci
+- pnpm run coveralls

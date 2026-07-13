@@ -9,7 +9,7 @@ const {
     decrypt
 } = require('../utilities/encryption')
 const hat = require('hat');
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 const {
     hostName,
     companyName,

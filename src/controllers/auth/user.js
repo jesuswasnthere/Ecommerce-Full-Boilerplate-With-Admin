@@ -1,5 +1,5 @@
 const {userModel }= require('../../models')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 const session = require('express-session')
 var owasp = require('owasp-password-strength-test');
 const { check, validationResult ,body } = require('express-validator/check');

@@ -1,0 +1,3 @@
+packages:
+  - '.'
+  - 'Admin_Site'

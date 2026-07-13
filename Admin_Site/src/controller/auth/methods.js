@@ -1,5 +1,5 @@
 const AdminModel =  require('../../model/admins')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 module.exports = {
     register : async (req,res) => {
         console.log('req.body :', req.body);

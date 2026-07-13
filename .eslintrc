@@ -16,12 +16,8 @@
         "ecmaVersion": 2018,
         "sourceType": "module"
     },
-    "plugins": [
-        "react"
-    ],
-    "parser": "babel-eslint",
     "rules": {
       "no-console": "off",
-      "react/jsx-uses-vars": 2
+            "no-unused-vars": "warn"
     }
   }
