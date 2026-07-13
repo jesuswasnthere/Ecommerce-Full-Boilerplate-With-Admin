@@ -41,6 +41,7 @@ var upload = multer({
 // M
 // Middlewares
 const app = express();
+const store = new session.MemoryStore();
 //validator
 app.use(expressValidator());
 
@@ -56,15 +57,6 @@ mongoose.connect(MONGODB_URL,{
 });
 
 app.use(cookieParser());
-
-// session Middleware
-const {store} = require('./utils/sessionStorage/firebaseSessionStorage')
-/*
-OR IF YOU WANT TO USE OTHER SESSION STORAGE
-const { store} = require('./utils/sessionStorage/memorySessionStorage')
-*/
-
-
 
 // session Middleware
 app.use(session({

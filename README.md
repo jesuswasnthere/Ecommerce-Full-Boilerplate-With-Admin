@@ -112,18 +112,17 @@
 
 * Clone the repo
 * Check the `editing_Guide.txt` for editing refs
-* `$ npm install`
+* `$ pnpm install`
+* This installs both the main site and `Admin_Site` through the pnpm workspace.
 
 ### For Main Ecommerce site
-* `$ npm i -g nodemon`
-* `$ nodemon server` to run the server in local development
-* `$ npm run start` to run the server in production
+* `$ pnpm start:dev` to run the server in local development
+* `$ pnpm start:prod` to run the server in production
 
 ### For Admin Site
 * `$ cd Admin_Site`
-* `$ npm i -g nodemon`
-* `$ nodemon server` to run the server in local development
-* `$ npm run start` to run the server in production
+* `$ pnpm start:dev` to run the server in local development
+* `$ pnpm start:prod` to run the server in production
 
 
 
