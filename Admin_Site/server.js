@@ -50,11 +50,6 @@ const {
   MONGODB_URL,
   sessionKeys
 } = require('./config.js')
-//database connection
-mongoose.connect(MONGODB_URL,{
-  useNewUrlParser: true
-});
-
 app.use(cookieParser());
 
 // session Middleware
@@ -357,6 +352,18 @@ app.get('/logout', (req, res) => {
 
 
 
-app.listen(app.get('port'), () => {
-  logger.info('> Server is running on PORT ', app.get('port'));
-})
+mongoose.connection.on('error', (error) => {
+  logger.error(`> MongoDB connection error: ${error.message}`);
+});
+
+mongoose.connect(MONGODB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(() => {
+  app.listen(app.get('port'), () => {
+    logger.info('> Server is running on PORT ', app.get('port'));
+  })
+}).catch((error) => {
+  logger.error(`> MongoDB connection failed: ${error.message}`);
+  process.exit(1);
+});
