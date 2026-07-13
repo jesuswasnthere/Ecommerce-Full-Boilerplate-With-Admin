@@ -120,9 +120,9 @@
 * `$ pnpm start:prod` to run the server in production
 
 ### For Admin Site
-* `$ cd Admin_Site`
-* `$ pnpm start:dev` to run the server in local development
-* `$ pnpm start:prod` to run the server in production
+* `$ pnpm start:dev:admin` to run the admin server in local development from the workspace root
+* `$ pnpm start:prod:admin` to run the admin server in production from the workspace root
+* Or run Admin scripts directly with `$ pnpm --dir Admin_Site start:dev`
 
 
 

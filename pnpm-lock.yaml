@@ -39,7 +39,7 @@ importers:
         specifier: ^1.6.1
         version: 1.6.1
       express-rate-limit:
-        specifier: ^3.5.1
+        specifier: ^3.5.3
         version: 3.5.3
       express-session:
         specifier: ^1.19.0

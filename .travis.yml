@@ -8,10 +8,12 @@ branches:
   - master
 cache:
   directories:
-  - node_modules
+  - $HOME/.local/share/pnpm/store
 before_install:
 - corepack enable
+- corepack prepare pnpm@10.15.1 --activate
 install:
-- pnpm install
+- pnpm install --frozen-lockfile
+script:
 - pnpm run test:ci
 - pnpm run coveralls

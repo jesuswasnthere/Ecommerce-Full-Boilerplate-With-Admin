@@ -52,7 +52,6 @@ const {
 } = require('./config.js')
 //database connection
 mongoose.connect(MONGODB_URL,{
-  useMongoClient:true,
   useNewUrlParser: true
 });
 

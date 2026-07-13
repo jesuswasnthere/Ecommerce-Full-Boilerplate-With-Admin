@@ -10,6 +10,8 @@
     "jest": "jest  --detectOpenHandles",
     "start:prod": "pm2-runtime start ecosystem.config.js --env production",
     "start:dev": "nodemon server.js",
+    "start:prod:admin": "pnpm --dir Admin_Site start:prod",
+    "start:dev:admin": "pnpm --dir Admin_Site start:dev",
     "lint": "eslint .",
     "test:ci": "jest --forceExit ",
     "coveralls": "jest --coverage --forceExit && cat ./coverage/lcov.info | coveralls"
@@ -27,7 +29,7 @@
     "express": "^4.22.2",
     "express-controller": "^0.3.2",
     "express-limiter": "^1.6.1",
-    "express-rate-limit": "^3.5.1",
+    "express-rate-limit": "^3.5.3",
     "express-session": "^1.19.0",
     "express-validator": "^5.3.1",
     "hat": "0.0.3",
